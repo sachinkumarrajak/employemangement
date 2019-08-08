@@ -1,0 +1,52 @@
+ <!-- <div class="jumbotron hero-nature"> -->
+ 
+   <div class="h">
+    <div class="img">
+    <p class="text-white" style="font-size: 30px">Login with Email or Social Providers</p>
+            <div class="container ">
+                
+               
+              <div class="row">
+                <div class="col-md-4 well" >
+                  
+                  <form [formGroup]="loginForm">
+                    <div class="form-group">
+                      <label class="text-primary">Email address</label>
+                      <input type="email" formControlName="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label class="text-primary">Password</label>
+                      <input type="password" class="form-control" formControlName="password">
+                      <label class="error">{{errorMessage}}</label>
+                    </div>
+                    <button type="submit" (click)="tryLogin(loginForm.value)" class="btn btn-primary">Login</button>
+                  </form>
+                
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Login with Google</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-info btn-block" (click)="tryTwitterLogin()">Login with Twitter</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p class="text-white"><b>No account yet?</b> <a href="/register"><b style="font-size: 15px; color: gold" >Create your Account</b></a></p>
+                </div>
+              </div>
+            </div>
+            
+            
+     
+          </div>
+  

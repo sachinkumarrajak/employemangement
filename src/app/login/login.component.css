@@ -1,0 +1,26 @@
+.header{
+    text-align: left;
+     font-size: 30px;
+     margin-bottom: 40px;
+     color: #fff;
+   }
+   
+   .row{
+     margin-top: 10px;
+   }
+   
+   .error{
+     color: red;
+   }
+   div.img {
+    background-image: url(/assets/images/lgg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100vw;
+    height: 100vh;
+    -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+    }

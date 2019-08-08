@@ -1,0 +1,150 @@
+
+
+<div><p>Employee</p></div>
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Create Employee</h3>
+          </div>
+          <div class="panel-body">
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="employeeService.selectedEmployee.$key">
+<!--<div class="form-group">
+  <label for="fullName">Name</label>
+  <input class="form-control" id="fullName" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="Full Name" required>
+</div>-->
+
+<div class="form-group"  [class.has-error]="fullNameControl.invalid && fullNameControl.touched">
+  <label  for="Name" class="control-label">Name</label>
+ <input id="Name" class="form-control" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" #fullNameControl="ngModel" placeholder="Full Name" required>
+ <span class="help-block"
+ *ngIf="fullNameControl.invalid && fullNameControl.touched">
+Full Name is required
+</span>
+</div>
+
+
+<div class="form-group" [class.has-error]="email.invalid && email.touched">
+  <label for="email" class="control-label">Email</label>
+  <input required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+         id="email" type="text" class="form-control" name="email"
+         [(ngModel)]="employeeService.selectedEmployee.email" #email="ngModel"  placeholder="Email" >
+  <span class="help-block" *ngIf="email.errors?.required && email.touched">
+    Email is required
+  </span>
+  <span class="help-block" *ngIf="email.errors?.pattern && email.touched">
+    Email is Invalid
+  </span>
+</div>
+
+
+
+<div class="form-group">
+  <label for="phone">phone</label>
+  <input class="form-control" id="phone" name="phone" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.phone" placeholder="Phone" required>
+</div>
+
+
+<div class="form-group" [class.has-error]="gender.invalid && gender.touched">
+  <label class="control-label">Gender</label>
+  <div class="form-control">
+    <label class="radio-inline">
+      <input type="radio" name="gender" required #gender="ngModel"
+             value="male" [(ngModel)]="employeeService.selectedEmployee.gender"> Male
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="gender" required #gender="ngModel"
+             value="female" [(ngModel)]="employeeService.selectedEmployee.gender"> Female
+    </label>
+  </div>
+  <span class="help-block" *ngIf="gender.invalid  && gender.touched">
+    Gender is required
+  </span>
+</div>
+
+<!--
+<div class="form-group">
+  <label for="dateOfBirth">Date of Birth</label>
+  <input id="dateOfBirth" name="dateOfBirth" [(ngModel)]="employeeService.selectedEmployee.dateOfBirth"
+          type="text" bsDatepicker class="form-control" />
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+      <div class="form-group">
+        <label>Position</label>
+        <input class="form-control" name="position" #position="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="Position">
+      </div>
+      
+
+<div class="form-group">
+  <label>Office</label>
+  <input class="form-control" name="office" #office="ngModel" [(ngModel)]="employeeService.selectedEmployee.office" placeholder="Office">
+</div>
+<div class="form-group">
+  <label>Salary</label>
+  <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-dollar"></i>
+      </div>
+      <input class="form-control" name="salary" #salary="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="Salary">
+  </div>
+</div>
+</div>
+<div class="panel-footer">
+<div class="form-group">
+  <button class="btn btn-primary" type="submit" [disabled]="!employeeForm.valid">
+    <i class="fa fa-floppy-o"></i>
+     Submit</button>
+  <button class="btn btn-primary" type="button" (click)="resetForm(employeeForm)">
+    <i class="fa fa-repeat"></i>
+     Reset</button>
+</div>
+</div>
+</div>
+</form>
+
